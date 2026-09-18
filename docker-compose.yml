@@ -1,0 +1,14 @@
+services:
+  api:
+    build: .
+    image: primer-dimer-api
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_PATH: /data/primer_dimer.db
+    volumes:
+      - primer-data:/data
+    restart: unless-stopped
+
+volumes:
+  primer-data:
